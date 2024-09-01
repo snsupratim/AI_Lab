@@ -1,0 +1,26 @@
+Summary
+
+The text explains the concepts of Manhattan distance and Euclidean distance in a 2D Cartesian plane, alongside a Python code snippet demonstrating how to calculate both distances between two points. Manhattan distance (L1 norm) is defined as the sum of the absolute differences of their coordinates, while Euclidean distance (L2 norm) is calculated using the square root of the sum of the squared differences. The provided Python code includes functions for computing both distances, a function to create a simple graph as an adjacency list, and a main function that initializes the graph, computes distances between two specific nodes, and prints the results.
+
+Key Insights
+Manhattan distance sums the absolute differences of coordinates, reflecting grid-like movement.
+Euclidean distance considers the straight-line distance between points, suitable for diagonal movement.
+The code illustrates practical applications of these distance metrics within a graph structure.
+Both distance calculations can be efficiently implemented in Python using mathematical operations and functions.
+Understanding the differences between these distances is crucial for various applications in fields like robotics, computer graphics, and geographic information systems.
+** Frequently Asked Questions **
+What is the difference between Manhattan and Euclidean distance?
+
+Manhattan distance measures the distance along axes at right angles, while Euclidean distance measures the straight-line distance between two points.
+
+How are Manhattan and Euclidean distances calculated in Python?
+
+Both distances can be calculated using simple functions: Manhattan distance involves summing the absolute differences of coordinates, while Euclidean distance uses the square root of the sum of squared differences.
+
+In what scenarios would you use Manhattan distance over Euclidean distance?
+
+Manhattan distance is preferred in scenarios where movement is restricted to grid-like paths, such as in city block navigation or when dealing with chessboard-like environments.
+
+Can the provided code be modified to handle 3D coordinates?
+
+Yes, the functions can be adapted to include a third coordinate by simply extending the calculations to include the z-dimension when computing the distances.
