@@ -1,48 +1,43 @@
-% Define predicates
 predicates
-    parent(symbol, symbol).
-    male(symbol).
-    female(symbol).
-    uncle(symbol, symbol).
-    grandson(symbol, symbol).
-    brother(symbol, symbol).
-    sibling(symbol, symbol).
-
-% Define clauses
+	male(symbol)
+	female(symbol)
+	parent(symbol, symbol)
+	uncle(symbol, symbol)
+	grandson(symbol, symbol)
+	brother(symbol, symbol)
+	
 clauses
-    parent(radha, rai).
-    parent(raju, rai).
-    parent(raju, rana).
-    parent(radha, rana).
-    parent(rai, romi).
-    parent(adhir, romi).
-    parent(rana, ranadhir).
-    parent(rana, rabi).
-    parent(ruma, rabi).
-    parent(ruma, ranadhir).
-    parent(rabi, ratul).
-    parent(rekha, ratul).
+	male(raju).
+	male(rana).
+	male(ranadhir).
+	male(rabi).
+	male(ratul).
+	male(adhir).
 
-    male(raju).
-    male(rana).
-    male(adhir).
-    male(ranadhir).
-    male(rabi).
-    male(ratul).
+	female(radha).
+	female(ruma).
+	female(rekha).
+	female(rai).
+	female(romi).
 
-    female(radha).
-    female(ruma).
-    female(rekha).
-    female(romi).
-    female(rai).
+	parent(raju, rai).
+	parent(radha, rai).
+	parent(raju, rana).
+	parent(adhir, romi).
+	parent(rai, romi).
+	parent(rana, ranadhir).
+	parent(rana, rabi).
+	parent(ruma, rabi).
+	parent(ruma, ranadhir).
+	parent(rabi, ratul).
+	parent(rekha, ratul).
 
-    sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y.
 
-    uncle(X, Z) :- male(X), parent(Y, Z), sibling(X, Y).
+	uncle(X, Z) :- brother(X,Y), parent(Y,Z), male(X), not(parent(X,Z)).
 
-    grandson(X, Z) :- male(X), parent(Y, X), parent(Z, Y).
+	grandson(X, Z) :- male(X), parent(Y, X), parent(Z, Y).
 
-    brother(X, Y) :- male(X), parent(Z, X), parent(Z, Y), X \= Y.
+	brother(X,Y) :- male(X), parent(Z,X), parent(Z,Y).
 
 % Define goals
 goals
