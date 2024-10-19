@@ -1,0 +1,31 @@
+predicates
+	move(symbol,symbol)
+	satellite(symbol)
+	planet(symbol)
+	jupiter_satellite(symbol)
+
+clauses
+	move(mercury,sun).
+	move(venus,sun).n
+	move(earth,sun).
+	move(mars,sun).
+	move(Jupiter,sun).
+	move(saturn,sun).
+	move(uranus,sun).
+	move(neptune,sun).
+	
+	move(moon,earth).
+	move(phobos,mars).
+	move(deimos,mars).
+
+	
+	move(ganymede,jupiter).
+	move(calliso,jupiter).
+	move(io,jupiter).
+	move(europa,jupiter).
+
+	move(pandor,saturn).
+	move(janus,satun).
+	move(epinetheus,saturn).
+	move(mimas,saturn).
+	
