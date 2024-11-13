@@ -1,8 +1,17 @@
-predicates
-	gcd(integer,integer,integer)
+% Define the domain
+domains
+    list = integer*    % list is a list of integers
 
+% Define the predicate
+predicates
+    list_length(list, integer)
+
+% Define clauses
 clauses
-	gcd(M,N,X):- gcd(N,M,X), N>M .
-	gcd(M,0,M).
-	gcd(0,N,N). 
-	gcd(M,N,X):- M>N,R= M mod N,gcd(N,R,X).
+    % Base case: the length of an empty list is 0
+    list_length([], 0).
+    
+    % Recursive case: the length of a list is 1 + the length of the tail
+    list_length([_|Tail], Length) :-
+        list_length(Tail, TailLength),
+        Length = TailLength + 1.

@@ -1,0 +1,20 @@
+% Define predicates
+predicates
+    gcd(integer, integer, integer)
+    lcm(integer, integer, integer)
+
+% Define clauses
+clauses
+    % GCD base case: if the second number is 0, GCD is the first number
+    gcd(M, 0, M) :- M > 0.
+    
+    % GCD recursive case: if N > 0, find remainder of M divided by N
+    gcd(M, N, GCD) :-
+        N > 0,
+        R = M mod N,
+        gcd(N, R, GCD).
+
+    % LCM calculation using GCD
+    lcm(A, B, LCM) :-
+        gcd(A, B, GCD),
+        LCM = abs(A * B) // GCD.

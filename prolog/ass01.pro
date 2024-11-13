@@ -33,19 +33,8 @@ clauses
 	parent(rekha, ratul).
 
 
-	uncle(X, Z) :- brother(X,Y), parent(Y,Z), male(X), not(parent(X,Z)).
+	uncle(Y, S) :-  , male(Y),parent(Z,X) ,parent(Z,Y),parent(X,S).
 
 	grandson(X, Z) :- male(X), parent(Y, X), parent(Z, Y).
 
 	brother(X,Y) :- male(X), parent(Z,X), parent(Z,Y).
-
-% Define goals
-goals
-    % i) Find the uncle of Romi
-    uncle(Uncle, romi).
-
-    % ii) Find the grandson of Radha
-    grandson(Grandson, radha).
-
-    % iii) Find the brothers of Rai
-    brother(Brother, rai).

@@ -2,7 +2,7 @@ predicates
 	disease(symbol,symbol)
 	patient(symbol,symbol)
 	has_disease(symbol,symbol)
-	has_conjunctivitis(symbol,symbol)
+	has_conjunctivitis(symbol)
 
 clauses
 	% Defining diseases and their symptoms
